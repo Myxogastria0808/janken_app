@@ -21,7 +21,7 @@ tabItem_ranking <- tabItem(
             actionButton(
                 inputId = 'ui_ranking_action',
                 label = 'ui_ranking_action',
-                icon = icon('start'),
+                icon = icon('play'),
                 width = '300px'
             )
         ),
@@ -182,137 +182,2106 @@ tabItem_ranking <- tabItem(
         #TODO: 1
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_1'",
+            #TODO: 1 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_1_pattern_1',
+                    label = '',
                     choices = c(
-                        'strategy_uniform_random' = 'strategy_uniform_random',
-                        'strategy_all_the_same' = 'strategy_all_the_same',
-                        'strategy_cycle' = 'strategy_cycle'
+                        'ui_ranking_1_pattern_1_strategy_uniform_random' = 'ui_ranking_1_pattern_1_strategy_uniform_random',
+                        'ui_ranking_1_pattern_1_strategy_all_the_same' = 'ui_ranking_1_pattern_1_strategy_all_the_same',
+                        'ui_ranking_1_pattern_1_strategy_cycle' = 'ui_ranking_1_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_1_pattern_1 == 'ui_ranking_1_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_1_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_1_pattern_1 == 'ui_ranking_1_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_1_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_1_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 2
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_2'",
+            #TODO: 2 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_2_pattern_1',
+                    label = '',
                     choices = c(
-                      'strategy_uniform_random' = 'strategy_uniform_random',
-                      'strategy_all_the_same' = 'strategy_all_the_same',
-                      'strategy_cycle' = 'strategy_cycle'
+                        'ui_ranking_2_pattern_1_strategy_uniform_random' = 'ui_ranking_2_pattern_1_strategy_uniform_random',
+                        'ui_ranking_2_pattern_1_strategy_all_the_same' = 'ui_ranking_2_pattern_1_strategy_all_the_same',
+                        'ui_ranking_2_pattern_1_strategy_cycle' = 'ui_ranking_2_pattern_1_strategy_cycle'
                     )
                 ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_2_pattern_1 == 'ui_ranking_2_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_2_pattern_1 == 'ui_ranking_2_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 2 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_2_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_2_pattern_2_strategy_uniform_random' = 'ui_ranking_2_pattern_2_strategy_uniform_random',
+                        'ui_ranking_2_pattern_2_strategy_all_the_same' = 'ui_ranking_2_pattern_2_strategy_all_the_same',
+                        'ui_ranking_2_pattern_2_strategy_cycle' = 'ui_ranking_2_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_2_pattern_2 == 'ui_ranking_2_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_2_pattern_2 == 'ui_ranking_2_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_2_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
             )
         ),
         #TODO: 3
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_3'",
+            #TODO: 3 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_3_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_3_pattern_1_strategy_uniform_random' = 'ui_ranking_3_pattern_1_strategy_uniform_random',
+                        'ui_ranking_3_pattern_1_strategy_all_the_same' = 'ui_ranking_3_pattern_1_strategy_all_the_same',
+                        'ui_ranking_3_pattern_1_strategy_cycle' = 'ui_ranking_3_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_1 == 'ui_ranking_3_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_1 == 'ui_ranking_3_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 3 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_3_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_3_pattern_2_strategy_uniform_random' = 'ui_ranking_3_pattern_2_strategy_uniform_random',
+                        'ui_ranking_3_pattern_2_strategy_all_the_same' = 'ui_ranking_3_pattern_2_strategy_all_the_same',
+                        'ui_ranking_3_pattern_2_strategy_cycle' = 'ui_ranking_3_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_2 == 'ui_ranking_3_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_2 == 'ui_ranking_3_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 3 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_3_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_3_pattern_3_strategy_uniform_random' = 'ui_ranking_3_pattern_3_strategy_uniform_random',
+                        'ui_ranking_3_pattern_3_strategy_all_the_same' = 'ui_ranking_3_pattern_3_strategy_all_the_same',
+                        'ui_ranking_3_pattern_3_strategy_cycle' = 'ui_ranking_3_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_3 == 'ui_ranking_3_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_3_pattern_3 == 'ui_ranking_3_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_3_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 4
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_4'",
+            #TODO: 4 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_4_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_4_pattern_1_strategy_uniform_random' = 'ui_ranking_4_pattern_1_strategy_uniform_random',
+                        'ui_ranking_4_pattern_1_strategy_all_the_same' = 'ui_ranking_4_pattern_1_strategy_all_the_same',
+                        'ui_ranking_4_pattern_1_strategy_cycle' = 'ui_ranking_4_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_1 == 'ui_ranking_4_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_1 == 'ui_ranking_4_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 4 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_4_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_4_pattern_2_strategy_uniform_random' = 'ui_ranking_4_pattern_2_strategy_uniform_random',
+                        'ui_ranking_4_pattern_2_strategy_all_the_same' = 'ui_ranking_4_pattern_2_strategy_all_the_same',
+                        'ui_ranking_4_pattern_2_strategy_cycle' = 'ui_ranking_4_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_2 == 'ui_ranking_4_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_2 == 'ui_ranking_4_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 4 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_4_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_4_pattern_3_strategy_uniform_random' = 'ui_ranking_4_pattern_3_strategy_uniform_random',
+                        'ui_ranking_4_pattern_3_strategy_all_the_same' = 'ui_ranking_4_pattern_3_strategy_all_the_same',
+                        'ui_ranking_4_pattern_3_strategy_cycle' = 'ui_ranking_4_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_3 == 'ui_ranking_4_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_3 == 'ui_ranking_4_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 4 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_4_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_4_pattern_4_strategy_uniform_random' = 'ui_ranking_4_pattern_4_strategy_uniform_random',
+                        'ui_ranking_4_pattern_4_strategy_all_the_same' = 'ui_ranking_4_pattern_4_strategy_all_the_same',
+                        'ui_ranking_4_pattern_4_strategy_cycle' = 'ui_ranking_4_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_4 == 'ui_ranking_4_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_4_pattern_4 == 'ui_ranking_4_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_4_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 5
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_5'",
+            #TODO: 5 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_5_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_5_pattern_1_strategy_uniform_random' = 'ui_ranking_5_pattern_1_strategy_uniform_random',
+                        'ui_ranking_5_pattern_1_strategy_all_the_same' = 'ui_ranking_5_pattern_1_strategy_all_the_same',
+                        'ui_ranking_5_pattern_1_strategy_cycle' = 'ui_ranking_5_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_1 == 'ui_ranking_5_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_1 == 'ui_ranking_5_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 5 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_5_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_5_pattern_2_strategy_uniform_random' = 'ui_ranking_5_pattern_2_strategy_uniform_random',
+                        'ui_ranking_5_pattern_2_strategy_all_the_same' = 'ui_ranking_5_pattern_2_strategy_all_the_same',
+                        'ui_ranking_5_pattern_2_strategy_cycle' = 'ui_ranking_5_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_2 == 'ui_ranking_5_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_2 == 'ui_ranking_5_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 5 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_5_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_5_pattern_3_strategy_uniform_random' = 'ui_ranking_5_pattern_3_strategy_uniform_random',
+                        'ui_ranking_5_pattern_3_strategy_all_the_same' = 'ui_ranking_5_pattern_3_strategy_all_the_same',
+                        'ui_ranking_5_pattern_3_strategy_cycle' = 'ui_ranking_5_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_3 == 'ui_ranking_5_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_3 == 'ui_ranking_5_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 5 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_5_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_5_pattern_4_strategy_uniform_random' = 'ui_ranking_5_pattern_4_strategy_uniform_random',
+                        'ui_ranking_5_pattern_4_strategy_all_the_same' = 'ui_ranking_5_pattern_4_strategy_all_the_same',
+                        'ui_ranking_5_pattern_4_strategy_cycle' = 'ui_ranking_5_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_4 == 'ui_ranking_5_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_4 == 'ui_ranking_5_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 5 pattern_5
+            box(
+                title = 'pattern 5',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_5_pattern_5',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_5_pattern_5_strategy_uniform_random' = 'ui_ranking_5_pattern_5_strategy_uniform_random',
+                        'ui_ranking_5_pattern_5_strategy_all_the_same' = 'ui_ranking_5_pattern_5_strategy_all_the_same',
+                        'ui_ranking_5_pattern_5_strategy_cycle' = 'ui_ranking_5_pattern_5_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_5 == 'ui_ranking_5_pattern_5_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_5_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_5_pattern_5 == 'ui_ranking_5_pattern_5_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_5_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_5_pattern_5_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 6
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_6'",
+            #TODO: 6 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_6_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_6_pattern_1_strategy_uniform_random' = 'ui_ranking_6_pattern_1_strategy_uniform_random',
+                        'ui_ranking_6_pattern_1_strategy_all_the_same' = 'ui_ranking_6_pattern_1_strategy_all_the_same',
+                        'ui_ranking_6_pattern_1_strategy_cycle' = 'ui_ranking_6_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_1 == 'ui_ranking_6_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_1 == 'ui_ranking_6_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 6 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_6_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_6_pattern_2_strategy_uniform_random' = 'ui_ranking_6_pattern_2_strategy_uniform_random',
+                        'ui_ranking_6_pattern_2_strategy_all_the_same' = 'ui_ranking_6_pattern_2_strategy_all_the_same',
+                        'ui_ranking_6_pattern_2_strategy_cycle' = 'ui_ranking_6_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_2 == 'ui_ranking_6_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_2 == 'ui_ranking_6_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 6 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_6_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_6_pattern_3_strategy_uniform_random' = 'ui_ranking_6_pattern_3_strategy_uniform_random',
+                        'ui_ranking_6_pattern_3_strategy_all_the_same' = 'ui_ranking_6_pattern_3_strategy_all_the_same',
+                        'ui_ranking_6_pattern_3_strategy_cycle' = 'ui_ranking_6_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_3 == 'ui_ranking_6_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_3 == 'ui_ranking_6_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 6 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_6_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_6_pattern_4_strategy_uniform_random' = 'ui_ranking_6_pattern_4_strategy_uniform_random',
+                        'ui_ranking_6_pattern_4_strategy_all_the_same' = 'ui_ranking_6_pattern_4_strategy_all_the_same',
+                        'ui_ranking_6_pattern_4_strategy_cycle' = 'ui_ranking_6_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_4 == 'ui_ranking_6_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_4 == 'ui_ranking_6_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 6 pattern_5
+            box(
+                title = 'pattern 5',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_6_pattern_5',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_6_pattern_5_strategy_uniform_random' = 'ui_ranking_6_pattern_5_strategy_uniform_random',
+                        'ui_ranking_6_pattern_5_strategy_all_the_same' = 'ui_ranking_6_pattern_5_strategy_all_the_same',
+                        'ui_ranking_6_pattern_5_strategy_cycle' = 'ui_ranking_6_pattern_5_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_5 == 'ui_ranking_6_pattern_5_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_5_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_5 == 'ui_ranking_6_pattern_5_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_5_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_5_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 6 pattern_6
+            box(
+                title = 'pattern 6',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_6_pattern_6',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_6_pattern_6_strategy_uniform_random' = 'ui_ranking_6_pattern_6_strategy_uniform_random',
+                        'ui_ranking_6_pattern_6_strategy_all_the_same' = 'ui_ranking_6_pattern_6_strategy_all_the_same',
+                        'ui_ranking_6_pattern_6_strategy_cycle' = 'ui_ranking_6_pattern_6_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_6 == 'ui_ranking_6_pattern_6_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_6_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_6 == 'ui_ranking_6_pattern_6_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_6_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_6_pattern_6_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 7
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_7'",
+            #TODO: 7 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_7_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_7_pattern_1_strategy_uniform_random' = 'ui_ranking_7_pattern_1_strategy_uniform_random',
+                        'ui_ranking_7_pattern_1_strategy_all_the_same' = 'ui_ranking_7_pattern_1_strategy_all_the_same',
+                        'ui_ranking_7_pattern_1_strategy_cycle' = 'ui_ranking_7_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_1 == 'ui_ranking_7_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_1 == 'ui_ranking_7_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_2_strategy_uniform_random' = 'ui_ranking_7_pattern_2_strategy_uniform_random',
+                        'ui_ranking_7_pattern_2_strategy_all_the_same' = 'ui_ranking_7_pattern_2_strategy_all_the_same',
+                        'ui_ranking_7_pattern_2_strategy_cycle' = 'ui_ranking_7_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_2 == 'ui_ranking_7_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_2 == 'ui_ranking_7_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_3_strategy_uniform_random' = 'ui_ranking_7_pattern_3_strategy_uniform_random',
+                        'ui_ranking_7_pattern_3_strategy_all_the_same' = 'ui_ranking_7_pattern_3_strategy_all_the_same',
+                        'ui_ranking_7_pattern_3_strategy_cycle' = 'ui_ranking_7_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_3 == 'ui_ranking_7_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_3 == 'ui_ranking_7_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_4_strategy_uniform_random' = 'ui_ranking_7_pattern_4_strategy_uniform_random',
+                        'ui_ranking_7_pattern_4_strategy_all_the_same' = 'ui_ranking_7_pattern_4_strategy_all_the_same',
+                        'ui_ranking_7_pattern_4_strategy_cycle' = 'ui_ranking_7_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_4 == 'ui_ranking_7_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_4 == 'ui_ranking_7_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_5
+            box(
+                title = 'pattern 5',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_5',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_5_strategy_uniform_random' = 'ui_ranking_7_pattern_5_strategy_uniform_random',
+                        'ui_ranking_7_pattern_5_strategy_all_the_same' = 'ui_ranking_7_pattern_5_strategy_all_the_same',
+                        'ui_ranking_7_pattern_5_strategy_cycle' = 'ui_ranking_7_pattern_5_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_5 == 'ui_ranking_7_pattern_5_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_5_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_5 == 'ui_ranking_7_pattern_5_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_5_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_5_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_6
+            box(
+                title = 'pattern 6',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_6',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_6_strategy_uniform_random' = 'ui_ranking_7_pattern_6_strategy_uniform_random',
+                        'ui_ranking_7_pattern_6_strategy_all_the_same' = 'ui_ranking_7_pattern_6_strategy_all_the_same',
+                        'ui_ranking_7_pattern_6_strategy_cycle' = 'ui_ranking_7_pattern_6_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_6 == 'ui_ranking_7_pattern_6_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_6_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_6 == 'ui_ranking_7_pattern_6_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_6_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_6_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 7 pattern_7
+            box(
+                title = 'pattern 7',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_7_pattern_7',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_7_pattern_7_strategy_uniform_random' = 'ui_ranking_7_pattern_7_strategy_uniform_random',
+                        'ui_ranking_7_pattern_7_strategy_all_the_same' = 'ui_ranking_7_pattern_7_strategy_all_the_same',
+                        'ui_ranking_7_pattern_7_strategy_cycle' = 'ui_ranking_7_pattern_7_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_7 == 'ui_ranking_7_pattern_7_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_7_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_7_pattern_7 == 'ui_ranking_7_pattern_7_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_7_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_7_pattern_7_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 8
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_8'",
+            #TODO: 8 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_8_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_8_pattern_1_strategy_uniform_random' = 'ui_ranking_8_pattern_1_strategy_uniform_random',
+                        'ui_ranking_8_pattern_1_strategy_all_the_same' = 'ui_ranking_8_pattern_1_strategy_all_the_same',
+                        'ui_ranking_8_pattern_1_strategy_cycle' = 'ui_ranking_8_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_1 == 'ui_ranking_8_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_1 == 'ui_ranking_8_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_2_strategy_uniform_random' = 'ui_ranking_8_pattern_2_strategy_uniform_random',
+                        'ui_ranking_8_pattern_2_strategy_all_the_same' = 'ui_ranking_8_pattern_2_strategy_all_the_same',
+                        'ui_ranking_8_pattern_2_strategy_cycle' = 'ui_ranking_8_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_2 == 'ui_ranking_8_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_2 == 'ui_ranking_8_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_3_strategy_uniform_random' = 'ui_ranking_8_pattern_3_strategy_uniform_random',
+                        'ui_ranking_8_pattern_3_strategy_all_the_same' = 'ui_ranking_8_pattern_3_strategy_all_the_same',
+                        'ui_ranking_8_pattern_3_strategy_cycle' = 'ui_ranking_8_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_3 == 'ui_ranking_8_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_3 == 'ui_ranking_8_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_4_strategy_uniform_random' = 'ui_ranking_8_pattern_4_strategy_uniform_random',
+                        'ui_ranking_8_pattern_4_strategy_all_the_same' = 'ui_ranking_8_pattern_4_strategy_all_the_same',
+                        'ui_ranking_8_pattern_4_strategy_cycle' = 'ui_ranking_8_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_4 == 'ui_ranking_8_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_4 == 'ui_ranking_8_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_5
+            box(
+                title = 'pattern 5',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_5',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_5_strategy_uniform_random' = 'ui_ranking_8_pattern_5_strategy_uniform_random',
+                        'ui_ranking_8_pattern_5_strategy_all_the_same' = 'ui_ranking_8_pattern_5_strategy_all_the_same',
+                        'ui_ranking_8_pattern_5_strategy_cycle' = 'ui_ranking_8_pattern_5_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_5 == 'ui_ranking_8_pattern_5_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_5_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_5 == 'ui_ranking_8_pattern_5_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_5_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_5_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_6
+            box(
+                title = 'pattern 6',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_6',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_6_strategy_uniform_random' = 'ui_ranking_8_pattern_6_strategy_uniform_random',
+                        'ui_ranking_8_pattern_6_strategy_all_the_same' = 'ui_ranking_8_pattern_6_strategy_all_the_same',
+                        'ui_ranking_8_pattern_6_strategy_cycle' = 'ui_ranking_8_pattern_6_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_6 == 'ui_ranking_8_pattern_6_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_6_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_6 == 'ui_ranking_8_pattern_6_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_6_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_6_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_7
+            box(
+                title = 'pattern 7',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_7',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_7_strategy_uniform_random' = 'ui_ranking_8_pattern_7_strategy_uniform_random',
+                        'ui_ranking_8_pattern_7_strategy_all_the_same' = 'ui_ranking_8_pattern_7_strategy_all_the_same',
+                        'ui_ranking_8_pattern_7_strategy_cycle' = 'ui_ranking_8_pattern_7_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_7 == 'ui_ranking_8_pattern_7_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_7_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_7 == 'ui_ranking_8_pattern_7_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_7_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_7_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 8 pattern_8
+            box(
+                title = 'pattern 8',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_8_pattern_8',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_8_pattern_8_strategy_uniform_random' = 'ui_ranking_8_pattern_8_strategy_uniform_random',
+                        'ui_ranking_8_pattern_8_strategy_all_the_same' = 'ui_ranking_8_pattern_8_strategy_all_the_same',
+                        'ui_ranking_8_pattern_8_strategy_cycle' = 'ui_ranking_8_pattern_8_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_8 == 'ui_ranking_8_pattern_8_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_8_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_8_pattern_8 == 'ui_ranking_8_pattern_8_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_8_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_8_pattern_8_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),
         #TODO: 9
         conditionalPanel(
             condition = "input.ui_ranking_strategy_pattern == 'ui_ranking_9'",
+            #TODO: 9 pattern_1
             box(
-                title = '',
+                title = 'pattern 1',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
                 selectInput(
-                    inputId = '1',
-                    label = '1',
+                    inputId = 'ui_ranking_9_pattern_1',
+                    label = '',
                     choices = c(
-                      '1' = '1',
-                      '2' = '2'
+                        'ui_ranking_9_pattern_1_strategy_uniform_random' = 'ui_ranking_9_pattern_1_strategy_uniform_random',
+                        'ui_ranking_9_pattern_1_strategy_all_the_same' = 'ui_ranking_9_pattern_1_strategy_all_the_same',
+                        'ui_ranking_9_pattern_1_strategy_cycle' = 'ui_ranking_9_pattern_1_strategy_cycle'
                     )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_1 == 'ui_ranking_9_pattern_1_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_1_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_1 == 'ui_ranking_9_pattern_1_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_1_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_1_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_2
+            box(
+                title = 'pattern 2',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_2',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_2_strategy_uniform_random' = 'ui_ranking_9_pattern_2_strategy_uniform_random',
+                        'ui_ranking_9_pattern_2_strategy_all_the_same' = 'ui_ranking_9_pattern_2_strategy_all_the_same',
+                        'ui_ranking_9_pattern_2_strategy_cycle' = 'ui_ranking_9_pattern_2_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_2 == 'ui_ranking_9_pattern_2_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_2_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_2 == 'ui_ranking_9_pattern_2_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_2_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_2_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_3
+            box(
+                title = 'pattern 3',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_3',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_3_strategy_uniform_random' = 'ui_ranking_9_pattern_3_strategy_uniform_random',
+                        'ui_ranking_9_pattern_3_strategy_all_the_same' = 'ui_ranking_9_pattern_3_strategy_all_the_same',
+                        'ui_ranking_9_pattern_3_strategy_cycle' = 'ui_ranking_9_pattern_3_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_3 == 'ui_ranking_9_pattern_3_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_3_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_3 == 'ui_ranking_9_pattern_3_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_3_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_3_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_4
+            box(
+                title = 'pattern 4',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_4',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_4_strategy_uniform_random' = 'ui_ranking_9_pattern_4_strategy_uniform_random',
+                        'ui_ranking_9_pattern_4_strategy_all_the_same' = 'ui_ranking_9_pattern_4_strategy_all_the_same',
+                        'ui_ranking_9_pattern_4_strategy_cycle' = 'ui_ranking_9_pattern_4_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_4 == 'ui_ranking_9_pattern_4_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_4_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_4 == 'ui_ranking_9_pattern_4_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_4_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_4_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_5
+            box(
+                title = 'pattern 5',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_5',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_5_strategy_uniform_random' = 'ui_ranking_9_pattern_5_strategy_uniform_random',
+                        'ui_ranking_9_pattern_5_strategy_all_the_same' = 'ui_ranking_9_pattern_5_strategy_all_the_same',
+                        'ui_ranking_9_pattern_5_strategy_cycle' = 'ui_ranking_9_pattern_5_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_5 == 'ui_ranking_9_pattern_5_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_5_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_5 == 'ui_ranking_9_pattern_5_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_5_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_5_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_6
+            box(
+                title = 'pattern 6',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_6',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_6_strategy_uniform_random' = 'ui_ranking_9_pattern_6_strategy_uniform_random',
+                        'ui_ranking_9_pattern_6_strategy_all_the_same' = 'ui_ranking_9_pattern_6_strategy_all_the_same',
+                        'ui_ranking_9_pattern_6_strategy_cycle' = 'ui_ranking_9_pattern_6_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_6 == 'ui_ranking_9_pattern_6_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_6_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_6 == 'ui_ranking_9_pattern_6_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_6_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_6_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_7
+            box(
+                title = 'pattern 7',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_7',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_7_strategy_uniform_random' = 'ui_ranking_9_pattern_7_strategy_uniform_random',
+                        'ui_ranking_9_pattern_7_strategy_all_the_same' = 'ui_ranking_9_pattern_7_strategy_all_the_same',
+                        'ui_ranking_9_pattern_7_strategy_cycle' = 'ui_ranking_9_pattern_7_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_7 == 'ui_ranking_9_pattern_7_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_7_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_7 == 'ui_ranking_9_pattern_7_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_7_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_7_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_8
+            box(
+                title = 'pattern 8',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_8',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_8_strategy_uniform_random' = 'ui_ranking_9_pattern_8_strategy_uniform_random',
+                        'ui_ranking_9_pattern_8_strategy_all_the_same' = 'ui_ranking_9_pattern_8_strategy_all_the_same',
+                        'ui_ranking_9_pattern_8_strategy_cycle' = 'ui_ranking_9_pattern_8_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_8 == 'ui_ranking_9_pattern_8_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_8_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_8 == 'ui_ranking_9_pattern_8_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_8_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_8_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                )
+            ),
+            #TODO: 9 pattern_9
+            box(
+                title = 'pattern 9',
+                status = "info",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                selectInput(
+                    inputId = 'ui_ranking_9_pattern_9',
+                    label = '',
+                    choices = c(
+                        'ui_ranking_9_pattern_9_strategy_uniform_random' = 'ui_ranking_9_pattern_9_strategy_uniform_random',
+                        'ui_ranking_9_pattern_9_strategy_all_the_same' = 'ui_ranking_9_pattern_9_strategy_all_the_same',
+                        'ui_ranking_9_pattern_9_strategy_cycle' = 'ui_ranking_9_pattern_9_strategy_cycle'
+                    )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_9 == 'ui_ranking_9_pattern_9_strategy_all_the_same'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_9_strategy_all_the_same',
+                            label = 'number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
+                ),
+                conditionalPanel(
+                    condition = "input.ui_ranking_9_pattern_9 == 'ui_ranking_9_pattern_9_strategy_cycle'",
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_9_strategy_cycle_cycle',
+                            label = 'cycle',
+                            1,
+                            min = 1,
+                            max = NA,
+                            step = 1
+                        ),
+                        numericInput(
+                            inputId = 'ui_ranking_9_pattern_9_strategy_cycle_first_number',
+                            label = 'first_number',
+                            1,
+                            min = 1,
+                            max = 3,
+                            step = 1
+                        )
                 )
             )
         ),

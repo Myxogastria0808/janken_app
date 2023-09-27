@@ -11,23 +11,68 @@ shinyServer(function(input, output) {
         server_ranking_generation_vector <- ranking_result[[2]]
         server_ranking_strategy_pattern <- ranking_result[[3]]
         if (server_ranking_strategy_pattern == 1) {
-
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1'))
         } else if (server_ranking_strategy_pattern == 2) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2'))
         } else if (server_ranking_strategy_pattern == 3) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3'))
         } else if (server_ranking_strategy_pattern == 4) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4'))
         } else if (server_ranking_strategy_pattern == 5) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4')) +
+                geom_line(aes(y = server_ranking_result_data[,5], colour = '5'))
         } else if (server_ranking_strategy_pattern == 6) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4')) +
+                geom_line(aes(y = server_ranking_result_data[,5], colour = '5')) +
+                geom_line(aes(y = server_ranking_result_data[,6], colour = '6'))
         } else if (server_ranking_strategy_pattern == 7) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4')) +
+                geom_line(aes(y = server_ranking_result_data[,5], colour = '5')) +
+                geom_line(aes(y = server_ranking_result_data[,6], colour = '6')) +
+                geom_line(aes(y = server_ranking_result_data[,7], colour = '7'))
         } else if (server_ranking_strategy_pattern == 8) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4')) +
+                geom_line(aes(y = server_ranking_result_data[,5], colour = '5')) +
+                geom_line(aes(y = server_ranking_result_data[,6], colour = '6')) +
+                geom_line(aes(y = server_ranking_result_data[,7], colour = '7')) +
+                geom_line(aes(y = server_ranking_result_data[,8], colour = '8'))
         } else if (server_ranking_strategy_pattern == 9) {
-            
+            ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
+                geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
+                geom_line(aes(y = server_ranking_result_data[,2], colour = '2')) +
+                geom_line(aes(y = server_ranking_result_data[,3], colour = '3')) +
+                geom_line(aes(y = server_ranking_result_data[,4], colour = '4')) +
+                geom_line(aes(y = server_ranking_result_data[,5], colour = '5')) +
+                geom_line(aes(y = server_ranking_result_data[,6], colour = '6')) +
+                geom_line(aes(y = server_ranking_result_data[,7], colour = '7')) +
+                geom_line(aes(y = server_ranking_result_data[,8], colour = '8')) +
+                geom_line(aes(y = server_ranking_result_data[,9], colour = '9'))
         } else if (server_ranking_strategy_pattern == 10) {
             ggplot(data = server_ranking_result_data, aes(server_ranking_generation_vector)) +
                 geom_line(aes(y = server_ranking_result_data[,1], colour = '1')) +
