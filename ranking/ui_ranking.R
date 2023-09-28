@@ -1,6 +1,7 @@
 tabItem_ranking <- tabItem(
     tabName = "ui_ranking",
     fluidRow(
+        h1('Ranking'),
         box(
             title ="Graph",
             status = "primary",
@@ -11,23 +12,19 @@ tabItem_ranking <- tabItem(
                 outputId = 'ui_ranking_graph',
                 width = '100%'
             )
-        ),
-        box(
-            title ="action",
-            status = "primary",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            width = '100%',
-            actionButton(
-                inputId = 'ui_ranking_action',
-                label = 'ui_ranking_action',
-                icon = icon('play'),
-                width = '300px'
-            )
-        ),
+        )
     ),
     fluidRow(
-        h1("Ranking"),
+        actionButton(
+            inputId = 'ui_ranking_action',
+            label = '出航',
+            width = '250px',
+            height = '60px',
+            style = "margin-top: 20px; margin-bottom: 40px; font-size: 18px;",
+            class = "center-block btn-info"
+        )
+    ),
+    fluidRow(
         box(
             title ="group_size",
             status = "primary",

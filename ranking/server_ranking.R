@@ -5,7 +5,7 @@ ui_ranking_action_func <- eventReactive(
     input$ui_ranking_action,
     {
         if (input$ui_ranking_strategy_pattern == 'ui_ranking_1') {
-            #!server ranking 7
+            #!server ranking 1
             #TODO 設定パラメーター
             server_ranking_group_size <- input$ui_ranking_group_size
             server_ranking_the_number_of_times <- input$ui_ranking_the_number_of_times
@@ -42,26 +42,24 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_2') {
             #!server ranking 2
             #TODO 設定パラメーター
@@ -119,27 +117,25 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_3') {
             #!server ranking 3
             #TODO 設定パラメーター
@@ -216,28 +212,26 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_4') {
             #!server ranking 4
             #TODO 設定パラメーター
@@ -333,29 +327,27 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_5') {
             #!server ranking 5
             #TODO 設定パラメーター
@@ -470,30 +462,28 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_6') {
             #!server ranking 6
             #TODO 設定パラメーター
@@ -627,31 +617,29 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5,
-                server_ranking_pattern_6
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5,
+                    server_ranking_pattern_6
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_7') {
             #!server ranking 7
             #TODO 設定パラメーター
@@ -804,32 +792,30 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5,
-                server_ranking_pattern_6,
-                server_ranking_pattern_7
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5,
+                    server_ranking_pattern_6,
+                    server_ranking_pattern_7
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_8') {
             #!server ranking 8
             #TODO 設定パラメーター
@@ -1001,33 +987,31 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5,
-                server_ranking_pattern_6,
-                server_ranking_pattern_7,
-                server_ranking_pattern_8
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5,
+                    server_ranking_pattern_6,
+                    server_ranking_pattern_7,
+                    server_ranking_pattern_8
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_9') {
             #!sever ranking 9 
             #TODO 設定パラメーター
@@ -1218,34 +1202,32 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5,
-                server_ranking_pattern_6,
-                server_ranking_pattern_7,
-                server_ranking_pattern_8,
-                server_ranking_pattern_9
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5,
+                    server_ranking_pattern_6,
+                    server_ranking_pattern_7,
+                    server_ranking_pattern_8,
+                    server_ranking_pattern_9
+                )
+            )
 
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
         } else if (input$ui_ranking_strategy_pattern == 'ui_ranking_10') {
             #!server ranking 10
             #TODO 設定パラメーター
@@ -1455,89 +1437,32 @@ ui_ranking_action_func <- eventReactive(
             server_ranking_data <- server_ranking_gen_group(
                 group_size = server_ranking_group_size,
                 strategy_pattern = server_ranking_strategy_pattern
-            ) #nolint
-            #本体の計算
-            #TODO#######################################
-            print('server_ranking_data')
-            print(server_ranking_data)
-            print('server_ranking_group_size')
-            print(server_ranking_group_size)
-            print('server_ranking_the_number_of_times')
-            print(server_ranking_the_number_of_times)
-            print('server_ranking_strategy_pattern')
-            print(server_ranking_strategy_pattern)
-            print('server_ranking_how_to_generate')
-            print(server_ranking_how_to_generate)
-            print('server_ranking_equal_ratio')
-            print(server_ranking_equal_ratio)
-            print('server_ranking_ratio')
-            print(server_ranking_ratio)
-            print('server_ranking_win_point')
-            print(server_ranking_win_point)
-            print('server_ranking_lose_point')
-            print(server_ranking_lose_point)
-            print('server_ranking_draw_point')
-            print(server_ranking_draw_point)
-            print('server_ranking_generation')
-            print(server_ranking_generation)
-            print('server_ranking_pattern_1')
-            print(class(server_ranking_pattern_1))
-            print(server_ranking_pattern_1)
-            print('server_ranking_pattern_2')
-            print(class(server_ranking_pattern_2))
-            print(server_ranking_pattern_2)
-            print('server_ranking_pattern_3')
-            print(class(server_ranking_pattern_3))
-            print(server_ranking_pattern_3)
-            print('server_ranking_pattern_4')
-            print(class(server_ranking_pattern_4))
-            print(server_ranking_pattern_4)
-            print('server_ranking_pattern_5')
-            print(class(server_ranking_pattern_5))
-            print(server_ranking_pattern_5)
-            print('server_ranking_pattern_6')
-            print(class(server_ranking_pattern_6))
-            print(server_ranking_pattern_6)
-            print('server_ranking_pattern_7')
-            print(class(server_ranking_pattern_7))
-            print(server_ranking_pattern_7)
-            print('server_ranking_pattern_8')
-            print(class(server_ranking_pattern_8))
-            print(server_ranking_pattern_8)
-            print('server_ranking_pattern_9')
-            print(class(server_ranking_pattern_9))
-            print(server_ranking_pattern_9)
-            print('server_ranking_pattern_10')
-            print(class(server_ranking_pattern_10))
-            print(server_ranking_pattern_10)
-            #TODO#######################################
-            server_ranking_result_data <- ga_ranking_result(
-                group = server_ranking_data,
-                group_size = server_ranking_group_size,
-                the_number_of_times = server_ranking_the_number_of_times,
-                strategy_pattern = server_ranking_strategy_pattern,
-                how_to_generate = server_ranking_how_to_generate,
-                equal_ratio = server_ranking_equal_ratio,
-                ratio = server_ranking_ratio,
-                win_point = server_ranking_win_point,
-                lose_point = server_ranking_lose_point,
-                draw_point = server_ranking_draw_point,
-                generation = server_ranking_generation,
-                server_ranking_pattern_1,
-                server_ranking_pattern_2,
-                server_ranking_pattern_3,
-                server_ranking_pattern_4,
-                server_ranking_pattern_5,
-                server_ranking_pattern_6,
-                server_ranking_pattern_7,
-                server_ranking_pattern_8,
-                server_ranking_pattern_9,
-                server_ranking_pattern_10
             )
-            #*グラフ描画に必要な情報
-            server_ranking_generation_vector <- 1:server_ranking_generation
-
-            return(list(server_ranking_result_data, server_ranking_generation_vector, server_ranking_strategy_pattern))
+            return(
+                list(
+                    server_ranking_data,
+                    server_ranking_group_size,
+                    server_ranking_the_number_of_times,
+                    server_ranking_strategy_pattern,
+                    server_ranking_how_to_generate,
+                    server_ranking_equal_ratio,
+                    server_ranking_ratio,
+                    server_ranking_win_point,
+                    server_ranking_lose_point,
+                    server_ranking_draw_point,
+                    server_ranking_generation,
+                    server_ranking_pattern_1,
+                    server_ranking_pattern_2,
+                    server_ranking_pattern_3,
+                    server_ranking_pattern_4,
+                    server_ranking_pattern_5,
+                    server_ranking_pattern_6,
+                    server_ranking_pattern_7,
+                    server_ranking_pattern_8,
+                    server_ranking_pattern_9,
+                    server_ranking_pattern_10
+                )
+            )
         } else {
             stop('An expected error!')
         }

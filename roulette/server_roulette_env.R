@@ -103,7 +103,7 @@ strategy_cycle <- function(the_number_of_times, cycle, first_number) { # nolint
 }
 #!#########################初期集団生成の関数##########################
 #TODO 生成関数
-server_ranking_gen_group <- function(group_size, strategy_pattern) {
+server_roulette_gen_group <- function(group_size, strategy_pattern) {
     random_vector <- c()
     random <- sample(1:strategy_pattern, group_size, replace = TRUE, prob = NULL)
     for (i in 1:group_size) {
@@ -111,9 +111,10 @@ server_ranking_gen_group <- function(group_size, strategy_pattern) {
     }
     return(random_vector)
 }
+
 #!#########################本体の関数##########################
-#TODO: ランキング選択
-ga_ranking <- function(
+#TODO: ルーレット選択
+ga_roulette <- function(
     group,
     group_size,
     the_number_of_times,
@@ -234,7 +235,7 @@ ga_ranking <- function(
         #!以下、実験
         #最低点の取得
         min_point <- point_data_frame_ordered[group_size, 1]
-        min_point <- round(min_point * 0.999999)
+        min_point <- round(min_point * 0.99999) - 1
         #TODO: ごり押しで差を開けた
         for (i in 1:group_size) {
             point_data_frame_ordered[i, 1] <- point_data_frame_ordered[i, 1] - min_point #nolint
@@ -253,8 +254,11 @@ ga_ranking <- function(
         draw_point = draw_point
     )
 
-    #TODO 選択
-    ranking_select <- function(data, group_size, ratio) {
+    #!ここから直す
+    #####################################################################################################
+    #選択
+    #ルーレット選択
+    roulette_select <- function(data, group_size, ratio) {
         #rationのエラーハンドリング
         #!0 < ratio < 1
         if (0 >= ratio || 1 <= ratio) {
@@ -266,17 +270,25 @@ ga_ranking <- function(
         #四捨五入でsurvor == 0 || 1 の時
         if (survivor_number == 0) {
             survivor_number <- 1
-            warning('The ratio`s number is 0. You should input ratio larger than your input data.')
+            warning('The ratio`s number is 0. You should input ratio larger than your input data.') #nolint
         } else if (survivor_number == group_size) {
             survivor_number <- group_size - 1
-            warning('The ratio`s number is 1. You should input ratio less than your input data.')
+            warning('The ratio`s number is 1. You should input ratio less than your input data.') #nolint
         }
-        select_data <- data[1:survivor_number,]
+        #*ポイントの？をつくろう！
+        point_as_vector <- data$point
+        select_data_number <- sample(1:group_size, survivor_number, replace = FALSE, prob = point_as_vector) #nolint
+        #*data.frame化
+        select_data <- data.frame()
+        for (i in 1:survivor_number) {
+            each_select_data_number <- select_data_number[i]
+            select_data <- rbind(select_data, data[each_select_data_number, ])
+        }
         return(select_data)
     }
 
     #実行
-    ranking_select_data <- ranking_select(
+    roulette_select_data <- roulette_select(
         data = data,
         group_size = group_size,
         ratio = ratio
@@ -295,22 +307,21 @@ ga_ranking <- function(
             }
             return(random_vector)
         }
-        ranking_new_generation_random_data <- gen_new_generation_random(
-            select_data = ranking_select_data,
+        roulette_new_generation_random_data <- gen_new_generation_random(
+            select_data = roulette_select_data,
             group_size = group_size,
             strategy_pattern = strategy_pattern
         )
-
-        
         create_new_generation <- function(select_data, new_generation_roulette_data) {
             new_generation_vector <- c(select_data$strategy_number, new_generation_roulette_data)
             return(new_generation_vector)
         }
-        ranking_new_generation_random <- create_new_generation(
-            select_data = ranking_select_data,
-            new_generation_roulette_data = ranking_new_generation_random_data
+        roulette_new_generation_random <- create_new_generation(
+            select_data = roulette_select_data,
+            new_generation_roulette_data = roulette_new_generation_random_data
         )
-        return(ranking_new_generation_random)
+        return(roulette_new_generation_random)
+###############################################################################################################################################
     } else if (how_to_generate == 2) {
         each_strategy_ratio <- function(select_data, strategy_pattern) {
             sorted_strategy_data <- select_data[order(select_data$strategy_number, decreasing=F), ]
@@ -326,8 +337,8 @@ ga_ranking <- function(
         }
 
         #実行
-        ranking_each_strategy_data <- each_strategy_ratio(
-            select_data = ranking_select_data,
+        roulette_each_strategy_data <- each_strategy_ratio(
+            select_data = roulette_select_data,
             strategy_pattern = strategy_pattern
         )
 
@@ -355,23 +366,22 @@ ga_ranking <- function(
         }
 
         #実行
-        ranking_new_generation_roulette_data <- gen_new_generation_roulette(
+        roulette_new_generation_roulette_data <- gen_new_generation_roulette(
             equal_ratio = equal_ratio,
-            each_strategy_ratio = ranking_each_strategy_data,
+            each_strategy_ratio = roulette_each_strategy_data,
             group_size = group_size,
-            select_data = ranking_select_data,
+            select_data = roulette_select_data,
             strategy_pattern = strategy_pattern
         )
-
         create_new_generation <- function(select_data, new_generation_roulette_data) {
             new_generation_vector <- c(select_data$strategy_number, new_generation_roulette_data)
             return(new_generation_vector)
         }
-        ranking_new_generation <- create_new_generation(
-            select_data = ranking_select_data,
-            new_generation_roulette_data = ranking_new_generation_roulette_data
+        roulette_new_generation <- create_new_generation(
+            select_data = roulette_select_data,
+            new_generation_roulette_data = roulette_new_generation_roulette_data
         )
-        return(ranking_new_generation)
+        return(roulette_new_generation)
     } else {
         stop('how_togenerate can have only 1 or 2.')
     }
